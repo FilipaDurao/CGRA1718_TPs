@@ -7,4 +7,4 @@ Exercises solved during classes in the CGRA curricular unit.
 * **Topic:** Exercises proposed in classes and provided worksheets
 * **Course:** Computação Gráfica (CGRA) 
 * **Course Link:** 
-* **Moodle Link:**
+* **Moodle Link:** https://moodle.up.pt/course/view.php?id=817
