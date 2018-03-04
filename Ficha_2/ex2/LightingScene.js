@@ -79,7 +79,7 @@ class LightingScene extends CGFscene
 		this.lights[0].setDiffuse(1.0, 1.0, 1.0, 1.0);
 
 		// Ex2 Ponto 8 (por especular a amarelo)
-		this.lights[0].setSpecular(255, 255, 0, 1.0)
+		this.lights[0].setSpecular(255, 255, 0, 1.0);
 
 		this.lights[0].enable();
 
