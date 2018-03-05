@@ -24,6 +24,7 @@ class TPscene extends CGFscene
         this.axis=new CGFaxis(this);
         this.table = new MyTable(this);
         this.floor = new MyFloor(this);
+
     };
 
     initLights() 
@@ -92,6 +93,7 @@ class TPscene extends CGFscene
         this.floor.display();
 
         this.popMatrix();
+
         
         // ---- END Primitive drawing section
 
