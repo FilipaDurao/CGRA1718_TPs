@@ -12,9 +12,9 @@ class MyTable extends CGFobject
 		this.materialSteel.setShininess(200);
 
 		this.materialWood = new CGFappearance(this.scene);
-		this.materialWood.setAmbient(0.55,0.27,0.7,1);
-		this.materialWood.setDiffuse(0.5,0.5,0.5,1);
-		this.materialWood.setSpecular(0.55,0.27,0.7,1);	
+		this.materialWood.setAmbient(0.55,0.27,0.07,1);
+		this.materialWood.setDiffuse(0.55,0.27,0.07,1);
+		this.materialWood.setSpecular(0.55,0.27,0.07,1);	
 		this.materialWood.setShininess(10);
 		
     };
