@@ -29,6 +29,7 @@ class LightingScene extends CGFscene
 
 		this.axis = new CGFaxis(this);
 
+		
 		// Scene elements
 		this.table = new MyTable(this);
 		this.wall = new Plane(this);
@@ -146,7 +147,7 @@ class LightingScene extends CGFscene
 		// ---- END Background, camera and axis setup
 
 		// ---- BEGIN Scene drawing section
-
+		/*
 		// Floor
 		this.pushMatrix();
 			this.translate(7.5, 0, 7.5);
@@ -201,5 +202,6 @@ class LightingScene extends CGFscene
 		this.popMatrix();
 
 		// ---- END Scene drawing section
+		*/
 	};
 };
