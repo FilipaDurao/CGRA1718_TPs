@@ -12,32 +12,19 @@ class MyQuad extends CGFobject
 
 		this.slices = slices;
 		this.stacks = stacks;
-		
+
 		this.initBuffers();
 	};
 
 	initBuffers() 
 	{
-		this.vertices = [
-				0.5, 0.5, 0,
-				0.5, -0.5, 0,
-				-0.5, 0.5, 0,
-				-0.5, -0.5, 0
-		];
+		this.vertices = [];
 
-		this.indices = [
-				0, 2, 1,
-				1, 2, 3
-		];
+		this.indices = [];
+
+		this.normals = [];
 			
 		this.primitiveType=this.scene.gl.TRIANGLES;
-		
-		this.normals = [
-				0, 0, 1,
-				0, 0, 1,
-				0, 0, 1,
-				0, 0, 1
-		];
 				 
 		this.initGLBuffers();
 	};
