@@ -5,16 +5,16 @@ class MyTable extends CGFobject
         super(scene);
         this.cube = new MyUnitCubeQuad(this.scene);
 
-        this.materialSteel = new CGFappearance(this.scene);
+		this.materialSteel = new CGFappearance(this.scene);
 		this.materialSteel.setAmbient(0.3,0.3,0.3,1);
 		this.materialSteel.setDiffuse(1,1,1,1);
 		this.materialSteel.setSpecular(1,1,1,1);	
 		this.materialSteel.setShininess(200);
 
 		this.materialWood = new CGFappearance(this.scene);
-		this.materialWood.setAmbient(0.55,0.27,0.7,1);
-		this.materialWood.setDiffuse(0.5,0.5,0.5,1);
-		this.materialWood.setSpecular(0.55,0.27,0.7,1);	
+		this.materialWood.setAmbient(0.55,0.27,0.05,1);
+		this.materialWood.setDiffuse(0.55,0.27,0.05,1);
+		this.materialWood.setSpecular(0.55,0.27,0.05,1);	
 		this.materialWood.setShininess(10);
 		
     };

@@ -53,6 +53,18 @@ class LightingScene extends CGFscene
 		this.materialB.setSpecular(0.8,0.8,0.8,1);	
 		this.materialB.setShininess(120);
 
+		this.materialC = new CGFappearance(this);
+		this.materialC.setAmbient(0.3,0.3,0.3,1);
+		this.materialC.setDiffuse(0,0,1,1);
+		this.materialC.setSpecular(0,0,1,1);	
+		this.materialC.setShininess(120);
+
+		this.materialD = new CGFappearance(this);
+		this.materialD.setAmbient(0.3,0.3,0.3,1);
+		this.materialD.setDiffuse(1,0,0,1);
+		this.materialD.setSpecular(1,0,0,1);	
+		this.materialD.setShininess(120);
+
 	};
 
 	initCameras() 
@@ -85,19 +97,19 @@ class LightingScene extends CGFscene
 		// Light 0 caractheristics
 		this.lights[0].setAmbient(0, 0, 0, 1);
 		this.lights[0].setDiffuse(1.0, 1.0, 1.0, 1.0);
-		// Ex 2 Ponto 8 (por especular a amarelo)
-		this.lights[0].setSpecular(255, 255, 0, 1.0)
+		this.lights[0].setSpecular(255, 255, 255, 1.0)
 		this.lights[0].enable();
 		
 		// Light 1 caractheristics
 		this.lights[1].setAmbient(0, 0, 0, 1);
 		this.lights[1].setDiffuse(1.0, 1.0, 1.0, 1.0);
+		this.lights[1].setSpecular(255, 255, 255, 1.0)
 		this.lights[1].enable();
 
 		// Light 2 caractheristics (Ex 3 enable light 2 and set atenuation factors)
 		this.lights[2].setAmbient(0, 0, 0, 1);
 		this.lights[2].setDiffuse(1.0, 1.0, 1.0, 1.0);
-		this.lights[2].setSpecular(1, 1, 1, 1);
+		this.lights[2].setSpecular(255, 255, 255, 1);
 		this.lights[2].setConstantAttenuation(0);
 		this.lights[2].setLinearAttenuation(1.0);
 		this.lights[2].setQuadraticAttenuation(0);
@@ -106,7 +118,7 @@ class LightingScene extends CGFscene
 		// Light 3 caractheristics (Ex 3 enable light  3 and set attenuation factors)
 		this.lights[3].setAmbient(0, 0, 0, 1);
 		this.lights[3].setDiffuse(1.0, 1.0, 1.0, 1.0);
-		this.lights[3].setSpecular(255, 255, 0, 1.0);
+		this.lights[3].setSpecular(255, 255, 255, 1.0);
 		this.lights[3].setConstantAttenuation(0);
 		this.lights[3].setLinearAttenuation(0);
 		this.lights[3].setQuadraticAttenuation(1.0);
@@ -153,6 +165,7 @@ class LightingScene extends CGFscene
 			this.translate(7.5, 0, 7.5);
 			this.rotate(-90 * degToRad, 1, 0, 0);
 			this.scale(15, 15, 0.2);
+			this.materialD.apply();
 			this.floor.display();
 		this.popMatrix();
 
@@ -161,6 +174,7 @@ class LightingScene extends CGFscene
 			this.translate(0, 4, 7.5);
 			this.rotate(90 * degToRad, 0, 1, 0);
 			this.scale(15, 8, 0.2);
+			this.materialC.apply();
 			this.wall.display();
 		this.popMatrix();
 
