@@ -97,13 +97,13 @@ class LightingScene extends CGFscene
 		// Light 0 caractheristics
 		this.lights[0].setAmbient(0, 0, 0, 1);
 		this.lights[0].setDiffuse(1.0, 1.0, 1.0, 1.0);
-		this.lights[0].setSpecular(255, 255, 255, 1.0)
+		this.lights[0].setSpecular(255, 255, 255, 1.0);
 		this.lights[0].enable();
 		
 		// Light 1 caractheristics
 		this.lights[1].setAmbient(0, 0, 0, 1);
 		this.lights[1].setDiffuse(1.0, 1.0, 1.0, 1.0);
-		this.lights[1].setSpecular(255, 255, 255, 1.0)
+		this.lights[1].setSpecular(255, 255, 255, 1.0);
 		this.lights[1].enable();
 
 		// Light 2 caractheristics (Ex 3 enable light 2 and set atenuation factors)
