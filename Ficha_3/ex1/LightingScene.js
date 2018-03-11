@@ -31,27 +31,10 @@ class LightingScene extends CGFscene
 
 		
 		// Scene elements
-		this.table = new MyTable(this);
-		this.wall = new Plane(this);
-		this.floor = new MyQuad(this);
-		
-		this.boardA = new Plane(this, BOARD_A_DIVISIONS);
-		this.boardB = new Plane(this, BOARD_B_DIVISIONS);
+		this.prism = new MyPrism(this, 4, 1);
 
 		// Materials
 		this.materialDefault = new CGFappearance(this);
-		
-		this.materialA = new CGFappearance(this);
-		this.materialA.setAmbient(0.3,0.3,0.3,1);
-		this.materialA.setDiffuse(0.6,0.6,0.6,1);
-		this.materialA.setSpecular(0,0.2,0.8,1);
-		this.materialA.setShininess(120);
-
-		this.materialB = new CGFappearance(this);
-		this.materialB.setAmbient(0.3,0.3,0.3,1);
-		this.materialB.setDiffuse(0.6,0.6,0.6,1);
-		this.materialB.setSpecular(0.8,0.8,0.8,1);	
-		this.materialB.setShininess(120);
 		
 	};
 
@@ -62,7 +45,7 @@ class LightingScene extends CGFscene
 
 	initLights() 
 	{
-		//this.setGlobalAmbientLight(0.5,0.5,0.5, 1.0);
+		this.setGlobalAmbientLight(0.5,0.5,0.5, 1.0);
 		
 		// Positions for four lights
 
@@ -147,61 +130,10 @@ class LightingScene extends CGFscene
 		// ---- END Background, camera and axis setup
 
 		// ---- BEGIN Scene drawing section
-		/*
-		// Floor
-		this.pushMatrix();
-			this.translate(7.5, 0, 7.5);
-			this.rotate(-90 * degToRad, 1, 0, 0);
-			this.scale(15, 15, 0.2);
-			this.floor.display();
-		this.popMatrix();
-
-		// Left Wall
-		this.pushMatrix();
-			this.translate(0, 4, 7.5);
-			this.rotate(90 * degToRad, 0, 1, 0);
-			this.scale(15, 8, 0.2);
-			this.wall.display();
-		this.popMatrix();
-
-		// Plane Wall
-		this.pushMatrix();
-			this.translate(7.5, 4, 0);
-			this.scale(15, 8, 0.2);
-			this.wall.display();
-		this.popMatrix();
-
-		// First Table
-		this.pushMatrix();
-			this.translate(5, 0, 8);
-			this.table.display();
-		this.popMatrix();
-
-		// Second Table
-		this.pushMatrix();
-			this.translate(12, 0, 8);
-			this.table.display();
-		this.popMatrix();
-
-		// Board A
-		this.pushMatrix();
-			this.translate(4, 4.5, 0.2);
-			this.scale(BOARD_WIDTH, BOARD_HEIGHT, 1);
+		
+		this.prism.display();
 			
-			this.materialA.apply();
-			this.boardA.display();
-		this.popMatrix();
-
-		// Board B
-		this.pushMatrix();
-			this.translate(10.5, 4.5, 0.2);
-			this.scale(BOARD_WIDTH, BOARD_HEIGHT, 1);
-			
-			this.materialB.apply();
-			this.boardB.display();
-		this.popMatrix();
-
 		// ---- END Scene drawing section
-		*/
+		
 	};
 };
