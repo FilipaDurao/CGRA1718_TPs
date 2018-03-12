@@ -31,7 +31,7 @@ class LightingScene extends CGFscene
 
 		
 		// Scene elements
-		this.prism = new MyPrism(this, 4, 1);
+		this.prism = new MyPrism(this, 5, 1);
 
 		// Materials
 		this.materialDefault = new CGFappearance(this);
@@ -45,7 +45,7 @@ class LightingScene extends CGFscene
 
 	initLights() 
 	{
-		this.setGlobalAmbientLight(0.5,0.5,0.5, 1.0);
+		this.setGlobalAmbientLight(0.3,0.3,0.3, 1.0);
 		
 		// Positions for four lights
 
