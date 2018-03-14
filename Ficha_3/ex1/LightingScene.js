@@ -30,8 +30,8 @@ class LightingScene extends CGFscene
 		this.axis = new CGFaxis(this);
 
 		
-		// Scene elements
-		this.prism = new MyPrism(this, 5, 1);
+		// Prism
+		this.prism = new MyPrism(this, 8, 1);
 
 		// Materials
 		this.materialDefault = new CGFappearance(this);
@@ -130,8 +130,11 @@ class LightingScene extends CGFscene
 		// ---- END Background, camera and axis setup
 
 		// ---- BEGIN Scene drawing section
-		
-		this.prism.display();
+		this.pushMatrix();
+			this.translate(0, 1, 0);
+			this.rotate(degToRad*90, 1, 0, 0);
+			this.prism.display();
+		this.popMatrix();
 			
 		// ---- END Scene drawing section
 		
