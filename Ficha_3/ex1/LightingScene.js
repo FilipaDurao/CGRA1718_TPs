@@ -131,6 +131,7 @@ class LightingScene extends CGFscene
 
 		// ---- BEGIN Scene drawing section
 		this.pushMatrix();
+			this.scale(1, 6, 1);
 			this.translate(0, 1, 0);
 			this.rotate(degToRad*90, 1, 0, 0);
 			this.prism.display();
