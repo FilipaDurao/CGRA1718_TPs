@@ -196,6 +196,7 @@ class LightingScene extends CGFscene
 		// First Table
 		this.pushMatrix();
 			this.translate(5, 0, 8);
+			this.tableAppearance.apply();
 			this.table.display();
 		this.popMatrix();
 
