@@ -27,6 +27,8 @@ class LightingScene extends CGFscene
 		this.gl.enable(this.gl.CULL_FACE);
 		this.gl.depthFunc(this.gl.LEQUAL);
 
+		this.enableTextures(true);
+		
 		this.axis = new CGFaxis(this);
 
 		// Scene elements
