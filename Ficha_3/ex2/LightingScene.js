@@ -106,23 +106,6 @@ class LightingScene extends CGFscene
 			this.translate(5, 0, 0);
 			this.cilA.display();
 		this.popMatrix();
-/*
-		// Prism with only one stack
-		this.pushMatrix();
-			this.scale(1, 6, 1);
-			this.translate(0, 1, 0);
-			this.rotate(degToRad*90, 1, 0, 0);
-			this.prismA.display();
-		this.popMatrix();
-
-		this.pushMatrix();
-			//this.scale(1,6,1);
-			this.translate(5,1,0);
-			this.rotate(degToRad*90, 1, 0, 0);
-			this.prismB.display();
-		this.popMatrix();
-
-*/
 			
 		// ---- END Scene drawing section
 		

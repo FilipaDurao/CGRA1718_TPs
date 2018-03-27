@@ -68,10 +68,6 @@ class MyPrism extends CGFobject
 				this.indices.push(a+1, a+3, a+2);
 			}
 		}
-
-
-		// Array methods like push might be useful here
-		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections
 					
 		this.primitiveType=this.scene.gl.TRIANGLES;
 				 
