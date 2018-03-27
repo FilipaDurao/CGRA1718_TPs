@@ -31,15 +31,6 @@ class LightingScene extends CGFscene
 
 		this.axis = new CGFaxis(this);
 
-		// Scene elements
-		this.table = new MyTable(this);
-		this.wall = new Plane(this);
-		this.floor = new MyQuad(this);
-		this.chair = new MyChair(this);
-		
-		this.boardA = new Plane(this, BOARD_A_DIVISIONS);
-		this.boardB = new Plane(this, BOARD_B_DIVISIONS);
-
 		// Materials
 		this.materialDefault = new CGFappearance(this);
 		
@@ -73,6 +64,16 @@ class LightingScene extends CGFscene
 		this.tableAppearance.setSpecular(0.2,0.2,0.2,1);	
 		this.tableAppearance.setDiffuse(1,1,1,1);
 		this.tableAppearance.loadTexture("../resources/images/table.png");
+
+		// Scene elements
+		this.table = new MyTable(this);
+		this.wall = new Plane(this);
+		this.floor = new MyQuad(this);
+		this.chair = new MyChair(this);
+		
+		this.boardA = new Plane(this, BOARD_A_DIVISIONS);
+		this.boardB = new Plane(this, BOARD_B_DIVISIONS);
+		
 	};
 
 	initCameras() 
@@ -196,7 +197,6 @@ class LightingScene extends CGFscene
 		// First Table
 		this.pushMatrix();
 			this.translate(5, 0, 8);
-			this.tableAppearance.apply();
 			this.table.display();
 		this.popMatrix();
 
