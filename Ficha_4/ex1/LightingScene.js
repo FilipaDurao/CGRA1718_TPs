@@ -28,7 +28,7 @@ class LightingScene extends CGFscene
 		this.gl.depthFunc(this.gl.LEQUAL);
 
 		this.enableTextures(true);
-		
+
 		this.axis = new CGFaxis(this);
 
 		// Scene elements
@@ -67,6 +67,12 @@ class LightingScene extends CGFscene
 		this.materialD.setSpecular(1,0,0,1);	
 		this.materialD.setShininess(120);
 
+		// Table-top material with texture
+		this.tableAppearance = new CGFappearance(this);
+		this.tableAppearance.setShininess(20);
+		this.tableAppearance.setSpecular(0.2,0.2,0.2,1);	
+		this.tableAppearance.setDiffuse(1,1,1,1);
+		this.tableAppearance.loadTexture("../resources/images/table.png");
 	};
 
 	initCameras() 
