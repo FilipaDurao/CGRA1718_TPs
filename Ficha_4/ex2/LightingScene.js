@@ -63,7 +63,8 @@ class LightingScene extends CGFscene
 		this.floorAppearance.loadTexture("../resources/images/floor.png");
 		this.floorAppearance.setTextureWrap('REPEAT', 'REPEAT');
 		this.floorAppearance.setSpecular(1.0,1.0,1.0,1.0);
-		this.floorAppearance.setAmbient(0.5,0.5,0.5,1.0);
+		this.floorAppearance.setDiffuse(1.0,1.0,1.0,1.0);
+		this.floorAppearance.setAmbient(0.86,0.73,0.55,1.0);
 
 		// Window material
 		this.windowAppearance  = new CGFappearance(this);
@@ -89,7 +90,7 @@ class LightingScene extends CGFscene
 
 	initLights() 
 	{
-		this.setGlobalAmbientLight(0.8,0.8,0.8, 1.0);
+		this.setGlobalAmbientLight(0.5,0.5,0.5, 1.0);
 		
 		// Positions for four lights
 
