@@ -58,19 +58,16 @@ class LightingScene extends CGFscene
 		this.materialD.setSpecular(1,0,0,1);	
 		this.materialD.setShininess(120);
 
-		// Table-top material with texture
-		this.tableAppearance = new CGFappearance(this);
-		this.tableAppearance.setShininess(20);
-		this.tableAppearance.setSpecular(0.2,0.2,0.2,1);	
-		this.tableAppearance.setDiffuse(1,1,1,1);
-		this.tableAppearance.loadTexture("../resources/images/table.png");
+		// Floor material with texture
+		this.floorAppearance = new CGFappearance(this);
+		this.floorAppearance.loadTexture("../resources/images/floor.png");
+		this.floorAppearance.setTextureWrap('REPEAT', 'REPEAT');
 
 		// Scene elements
 		this.table = new MyTable(this);
 		this.wall = new Plane(this);
-		this.floor = new MyQuad(this);
+		this.floor = new MyQuad(this, 0, 10, 0, 12);
 		this.chair = new MyChair(this);
-		
 		this.boardA = new Plane(this, BOARD_A_DIVISIONS);
 		this.boardB = new Plane(this, BOARD_B_DIVISIONS);
 		
@@ -174,7 +171,7 @@ class LightingScene extends CGFscene
 			this.translate(7.5, 0, 7.5);
 			this.rotate(-90 * degToRad, 1, 0, 0);
 			this.scale(15, 15, 0.2);
-			this.materialD.apply();
+			this.floorAppearance.apply();
 			this.floor.display();
 		this.popMatrix();
 
