@@ -5,8 +5,12 @@
  */
 
 class MyQuad extends CGFobject {
-	constructor(scene) {
+	constructor(scene, minS, maxS, minT, maxT) {
 		super(scene);
+		this.minS = minS;
+		this.maxS = maxS;
+		this.minT = minT;
+		this.maxT = maxT;
 		this.initBuffers();
 	};
 
@@ -31,11 +35,11 @@ class MyQuad extends CGFobject {
 		];
 
 		this.texCoords = [
-			0, 0,
-			0, 1,
-			1, 0,
-			1, 1
-		]
+			this.minS, this.minT,
+			this.minS, this.maxT,
+			this.maxS, this.minT,
+			this.maxS, this.maxT
+		];
 
 		this.primitiveType = this.scene.gl.TRIANGLES;
 		this.initGLBuffers();
