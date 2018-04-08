@@ -4,7 +4,7 @@ class MyTable extends CGFobject
 	{
         super(scene);
         this.cube = new MyUnitCubeQuad(this.scene, 0, 1, 0, 1);
-		this.cube.initBuffers();
+
 		this.materialSteel = new CGFappearance(this.scene);
 		this.materialSteel.setAmbient(0.3,0.3,0.3,1);
 		this.materialSteel.setDiffuse(1,1,1,1);
@@ -20,6 +20,7 @@ class MyTable extends CGFobject
 		// Table-top material with texture
 		this.tableAppearance = new CGFappearance(this.scene);
 		this.tableAppearance.loadTexture("../resources/images/table.png");
+		this.tableAppearance.setTextureWrap('REPEAT', 'REPEAT');
 		this.tableAppearance.setShininess(20);
 		this.tableAppearance.setSpecular(0.2,0.2,0.2,1);	
 		this.tableAppearance.setDiffuse(1,1,1,1);
