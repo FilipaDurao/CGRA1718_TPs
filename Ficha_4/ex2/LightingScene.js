@@ -62,7 +62,8 @@ class LightingScene extends CGFscene
 		this.floorAppearance = new CGFappearance(this);
 		this.floorAppearance.loadTexture("../resources/images/floor.png");
 		this.floorAppearance.setTextureWrap('REPEAT', 'REPEAT');
-		this.floorAppearance.setAmbient(1.0,1.0,1.0,1.0);
+		this.floorAppearance.setSpecular(1.0,1.0,1.0,1.0);
+		this.floorAppearance.setAmbient(0.5,0.5,0.5,1.0);
 
 		// Window material
 		this.windowAppearance  = new CGFappearance(this);
