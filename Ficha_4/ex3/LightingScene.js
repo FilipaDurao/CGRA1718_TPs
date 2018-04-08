@@ -75,6 +75,7 @@ class LightingScene extends CGFscene
 		// Slides
 		this.slidesAppearance = new CGFappearance(this);
 		this.slidesAppearance.loadTexture("../resources/images/slides.png");
+		this.slidesAppearance.setTextureWrap('CLAMP_TO_EDGE', 'CLAMP_TO_EDGE');
 		this.slidesAppearance.setSpecular(0.2, 0.2, 0.2, 1);
 		this.slidesAppearance.setShininess(5);
 		this.slidesAppearance.setDiffuse(0.9, 0.9, 0.9, 1);
@@ -94,8 +95,8 @@ class LightingScene extends CGFscene
 		this.floor = new MyQuad(this, 0, 10, 0, 12);
 		this.chair = new MyChair(this);
 		this.window = new MyQuad(this, -0.5, 1.5, -0.5, 1.5);
-		this.boardA = new Plane(this, BOARD_A_DIVISIONS);
-		this.boardB = new Plane(this, BOARD_B_DIVISIONS);
+		this.screenProjection = new Plane(this, BOARD_A_DIVISIONS, -0.25, 1.25, 0, 1);
+		this.whiteBoard = new Plane(this, BOARD_B_DIVISIONS, 0, 1, 0, 1);
 		
 	};
 
@@ -244,7 +245,7 @@ class LightingScene extends CGFscene
 			this.translate(4, 4.5, 0.2);
 			this.scale(BOARD_WIDTH, BOARD_HEIGHT, 1);
 			this.slidesAppearance.apply();
-			this.boardA.display();
+			this.screenProjection.display();
 		this.popMatrix();
 
 		// Board B
@@ -252,7 +253,7 @@ class LightingScene extends CGFscene
 			this.translate(10.5, 4.5, 0.2);
 			this.scale(BOARD_WIDTH, BOARD_HEIGHT, 1);
 			this.boardAppearance.apply();
-			this.boardB.display();
+			this.whiteBoard.display();
 		this.popMatrix();
 
 		// First Chair
