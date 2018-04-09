@@ -3,7 +3,7 @@ class MyTable extends CGFobject
 	constructor(scene) 
 	{
         super(scene);
-        this.cube = new MyUnitCubeQuad(this.scene, 0, 1, 0, 1);
+        this.cube = new MyUnitCubeQuad(this.scene);
 
 		this.materialSteel = new CGFappearance(this.scene);
 		this.materialSteel.setAmbient(0.3,0.3,0.3,1);
