@@ -91,7 +91,7 @@ class LightingScene extends CGFscene
 				
 		// Marble
 		this.marbleAppearance = new CGFappearance(this);
-		this.marbleAppearance.loadTexture("../resources/images/window.png");
+		this.marbleAppearance.loadTexture("../resources/images/marble.jpg");
 		this.marbleAppearance.setSpecular(0.2, 0.2, 0.2, 1);
 		this.marbleAppearance.setShininess(120);
 		this.marbleAppearance.setDiffuse(0.6, 0.6, 0.6, 1);
@@ -105,8 +105,8 @@ class LightingScene extends CGFscene
 		this.window = new MyQuad(this, -0.5, 1.5, -0.5, 1.5);
 		this.screenProjection = new Plane(this, BOARD_A_DIVISIONS, -0.25, 1.25, 0, 1);
 		this.whiteBoard = new Plane(this, BOARD_B_DIVISIONS, 0, 1, 0, 1);
-		this.column = new MyCylinder(this, 4, 1);
-		
+		this.column = new MyCylinder(this, 20, 5);
+		console.log(this.column);
 	};
 
 	initCameras() 

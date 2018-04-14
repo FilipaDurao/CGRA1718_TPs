@@ -34,15 +34,15 @@ class MyCylinder extends CGFobject
 
 		// Fill vertices
 		for(let i = 0; i <= this.stacks; i++) {
-			t = i/this.stacks;
+			t = (this.stacks-i)/this.stacks;
 			for(let j = 0; j < this.slices; j++) {
-				s = j/this.slices;
+				s = (this.slices-j)/this.slices;
 				this.vertices.push(Math.cos(theta*j), Math.sin(theta*j), i/this.stacks);
 				this.normals.push(Math.cos(theta*j),Math.sin(theta*j),0);
 				this.texCoords.push(s, t);
 			} 
 
-			this.texCoords.push(1, t);
+			//this.texCoords.push(1, t);
 		}
 
 		// Fill indices
