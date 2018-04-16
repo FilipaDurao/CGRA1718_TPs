@@ -36,6 +36,7 @@ class MyCircle extends CGFobject
         }
 		this.vertices.push(0, 0, 0); // center
 		this.normals.push(0,0,1);
+		this.texCoords.push(0.5, 0.5);
 
 		// Fill indices
 		for(let j = 0; j < this.slices; j++) {
