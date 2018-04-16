@@ -297,11 +297,18 @@ class LightingScene extends CGFscene
 		this.popMatrix();
 
 		// Clock
+		
 		this.pushMatrix();
 			this.materialDefault.apply();
 			this.translate(7.5, 7.25, 0);
 			this.scale(0.75,0.75,0.2);
 			this.clock.display();
+		this.popMatrix();
+		
+		this.pushMatrix();
+			this.teste = new MyCircle(this, 4);
+			this.translate(0,10,0);
+			this.teste.display();
 		this.popMatrix();
 
 		// ---- END Scene drawing section

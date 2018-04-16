@@ -31,8 +31,8 @@ class MyCircle extends CGFobject
         // Fill vertices
 		for(let j = 0; j < this.slices; j++) {
             this.vertices.push(Math.cos(theta*j), Math.sin(theta*j), 0);
-            this.normals.push(0,0, 1);
-            this.texCoords.push(0.5 * (1 + Math.cos(theta * j)), 0.5 * (1 - Math.sin(theta * j)));
+            this.normals.push(Math.cos(theta*j), Math.sin(theta*j), 0);
+            //this.texCoords.push(0.5 * (1 + Math.cos(theta * j)), 0.5 * (1 - Math.sin(theta * j)));
         }
         this.vertices.push(0, 0, 0); // center
 
@@ -42,9 +42,8 @@ class MyCircle extends CGFobject
                 this.slices, j, (j+1)%this.slices
             );
         }
-
-		this.primitiveType=this.scene.gl.TRIANGLES;
 		console.log(this);
+		this.primitiveType=this.scene.gl.TRIANGLES;
 
 		this.initGLBuffers();
 	};
