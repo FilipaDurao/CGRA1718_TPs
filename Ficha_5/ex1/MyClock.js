@@ -15,7 +15,9 @@ class MyClock extends CGFobject
 
         // define the cylinder top
         this.cylinderTop = new MyCircle(this.scene, 12);
-        console.log(this.cylinderTop);
+
+        // Pointers
+        this.pointerH = new MyClockHand(this.scene);
 
         // define the texture to apply over the cylinder top
         this.cylinderTopAppearance = new CGFappearance(this.scene);
@@ -23,6 +25,10 @@ class MyClock extends CGFobject
         this.cylinderTopAppearance.setSpecular(0.8, 0.8, 0.8, 1);
         this.cylinderTopAppearance.setDiffuse(1, 1, 1, 1);
         this.cylinderTopAppearance.setAmbient(0.6, 0.6, 0.6, 1);
+
+        // hour pointer matterial
+        this.hourPointer = new CGFappearance(this.scene);
+        this.hourPointer.setAmbient(0, 0, 0, 1);
 	};
 
 	display() {
@@ -30,6 +36,12 @@ class MyClock extends CGFobject
             this.cylinder.display();
         this.scene.popMatrix();
 
+        this.scene.pushMatrix();
+            this.hourPointer.apply();
+            this.scene.translate(0,0,1);
+            this.pointerH.setAngle(90);
+            this.pointerH.display();
+        this.scene.popMatrix();
 
         this.scene.pushMatrix();
             this.scene.translate(0,0,1);

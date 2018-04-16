@@ -304,7 +304,6 @@ class LightingScene extends CGFscene
 			this.clock.display();
 		this.popMatrix();
 
-
 		// ---- END Scene drawing section
 	};
 };
