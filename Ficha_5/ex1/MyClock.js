@@ -17,7 +17,9 @@ class MyClock extends CGFobject
         this.cylinderTop = new MyCircle(this.scene, 12);
 
         // Pointers
-        this.pointerH = new MyClockHand(this.scene);
+        this.hoursPointer = new MyClockHand(this.scene);
+        this.minutesPointer = new MyClockHand(this.scene);
+        this.secondsPointer = new MyClockHand(this.scene);
 
         // define the texture to apply over the cylinder top
         this.cylinderTopAppearance = new CGFappearance(this.scene);
@@ -27,8 +29,16 @@ class MyClock extends CGFobject
         this.cylinderTopAppearance.setAmbient(0.6, 0.6, 0.6, 1);
 
         // hour pointer matterial
-        this.hourPointer = new CGFappearance(this.scene);
-        this.hourPointer.setAmbient(0, 0, 0, 1);
+        this.hoursPointerAppearance = new CGFappearance(this.scene);
+        this.hoursPointerAppearance.setAmbient(0, 0, 1, 1);
+
+        // minutes pointer matterial
+        this.minutesPointerAppearance = new CGFappearance(this.scene);
+        this.minutesPointerAppearance.setAmbient(1, 0, 0, 1);
+
+        // seconds pointer matterial
+        this.secondsPointerAppearance = new CGFappearance(this.scene);
+        this.secondsPointerAppearance.setAmbient(0, 1, 0, 1);
 	};
 
 	display() {
@@ -36,11 +46,29 @@ class MyClock extends CGFobject
             this.cylinder.display();
         this.scene.popMatrix();
 
+        // hour pointer
         this.scene.pushMatrix();
-            this.hourPointer.apply();
+            this.hoursPointerAppearance.apply();
+            this.scene.scale(0,0,0.5);
             this.scene.translate(0,0,1);
-            this.pointerH.setAngle(90);
-            this.pointerH.display();
+            //this.hoursPointer.setAngle(90);
+            this.hoursPointer.display();
+        this.scene.popMatrix();
+
+        // minutes pointer
+        this.scene.pushMatrix();
+            this.minutesPointerAppearance.apply();
+            this.scene.translate(0,0,1);
+            this.minutesPointer.setAngle(180);
+            this.minutesPointer.display();
+        this.scene.popMatrix();
+
+        // seconds pointer
+        this.scene.pushMatrix();
+            this.secondsPointerAppearance.apply();
+            this.scene.translate(0,0,1);
+            this.secondsPointer.setAngle(270);
+            this.secondsPointer.display();
         this.scene.popMatrix();
 
         this.scene.pushMatrix();
