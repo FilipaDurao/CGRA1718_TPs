@@ -106,7 +106,7 @@ class LightingScene extends CGFscene
 		this.screenProjection = new Plane(this, BOARD_A_DIVISIONS, -0.25, 1.25, 0, 1);
 		this.whiteBoard = new Plane(this, BOARD_B_DIVISIONS, 0, 1, 0, 1);
 		this.column = new MyCylinder(this, 20, 5);
-		console.log(this.column);
+		this.clock = new MyClock(this);
 	};
 
 	initCameras() 
@@ -259,7 +259,7 @@ class LightingScene extends CGFscene
 
 		// Board B
 		this.pushMatrix();
-			this.translate(10.5, 4.5, 0.2);
+			this.translate(11, 4.5, 0.2);
 			this.scale(BOARD_WIDTH, BOARD_HEIGHT, 1);
 			this.boardAppearance.apply();
 			this.whiteBoard.display();
@@ -296,7 +296,13 @@ class LightingScene extends CGFscene
 			this.column.display();
 		this.popMatrix();
 
-
+		// Clock
+		this.pushMatrix();
+			this.materialDefault.apply();
+			this.translate(7.5, 7.25, 0);
+			this.scale(0.75,0.75,0.2);
+			this.clock.display();
+		this.popMatrix();
 
 
 		// ---- END Scene drawing section
