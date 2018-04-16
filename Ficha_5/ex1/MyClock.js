@@ -49,17 +49,18 @@ class MyClock extends CGFobject
         // hour pointer
         this.scene.pushMatrix();
             this.hoursPointerAppearance.apply();
-            this.scene.scale(1,0.6,1);
             this.scene.translate(0,0,1);
-            //this.hoursPointer.setAngle(90);
+             
+            this.hoursPointer.setAngle(90);
+            this.scene.scale(1,0.6,1);
             this.hoursPointer.display();
         this.scene.popMatrix();
 
         // minutes pointer
         this.scene.pushMatrix();
             this.minutesPointerAppearance.apply();
-            this.scene.scale(1, 0.9, 1);
             this.scene.translate(0,0,1);
+            this.scene.scale(1, 0.9, 1);
             this.minutesPointer.setAngle(180);
             this.minutesPointer.display();
         this.scene.popMatrix();
@@ -67,8 +68,8 @@ class MyClock extends CGFobject
         // seconds pointer
         this.scene.pushMatrix();
             this.secondsPointerAppearance.apply();
-            this.scene.scale(0.9, 0.4, 1)
             this.scene.translate(0,0,1);
+            this.scene.scale(0.9, 0.4, 1);
             this.secondsPointer.setAngle(270);
             this.secondsPointer.display();
         this.scene.popMatrix();
