@@ -304,6 +304,13 @@ class LightingScene extends CGFscene
 			this.clock.display();
 		this.popMatrix();
 
+		// circulo
+		this.pushMatrix();
+			this.materialDefault.apply();
+			this.teste = new MyCircle(this, 12);
+			this.translate(0, 10, 0);
+			this.teste.display();
+		this.popMatrix();
 		// ---- END Scene drawing section
 	};
 };
