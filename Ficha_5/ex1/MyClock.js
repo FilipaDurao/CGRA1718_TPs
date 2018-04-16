@@ -44,10 +44,10 @@ class MyClock extends CGFobject
 	display() {
         this.scene.pushMatrix();
             this.cylinder.display();
-
         this.scene.popMatrix();
-            // hour pointer
-            this.scene.pushMatrix();
+
+        // hour pointer
+        this.scene.pushMatrix();
             this.hoursPointerAppearance.apply();
             this.scene.scale(0,0,0.5);
             this.scene.translate(0,0,1);
