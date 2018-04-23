@@ -38,8 +38,10 @@ class MyClock extends CGFobject
 
         // seconds pointer matterial
         this.secondsPointerAppearance = new CGFappearance(this.scene);
-        this.secondsPointerAppearance.setAmbient(0, 0, 0, 1);
+        this.secondsPointerAppearance.setAmbient(1, 0, 0, 1);
 	};
+
+	update(deltaTime){}
 
 	display() {
         this.scene.pushMatrix();
@@ -50,9 +52,8 @@ class MyClock extends CGFobject
         this.scene.pushMatrix();
             this.hoursPointerAppearance.apply();
             this.scene.translate(0,0,1);
-             
             this.hoursPointer.setAngle(90);
-            this.scene.scale(1,0.6,1);
+            this.scene.scale(0.021,0.5,0.02);	// Grossura x, Comprimento,  Grossura z 
             this.hoursPointer.display();
         this.scene.popMatrix();
 
@@ -60,17 +61,17 @@ class MyClock extends CGFobject
         this.scene.pushMatrix();
             this.minutesPointerAppearance.apply();
             this.scene.translate(0,0,1);
-            this.scene.scale(1, 0.9, 1);
             this.minutesPointer.setAngle(180);
+            this.scene.scale(0.015, 0.9, 0.015);
             this.minutesPointer.display();
         this.scene.popMatrix();
 
         // seconds pointer
         this.scene.pushMatrix();
             this.secondsPointerAppearance.apply();
-            this.scene.translate(0,0,1);
-            this.scene.scale(0.9, 0.4, 1);
+            this.scene.translate(0,0,1);            
             this.secondsPointer.setAngle(270);
+            this.scene.scale(0.004, 0.9, 0.004);
             this.secondsPointer.display();
         this.scene.popMatrix();
 

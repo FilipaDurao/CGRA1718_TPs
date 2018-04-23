@@ -107,6 +107,8 @@ class LightingScene extends CGFscene
 		this.whiteBoard = new Plane(this, BOARD_B_DIVISIONS, 0, 1, 0, 1);
 		this.column = new MyCylinder(this, 20, 5);
 		this.clock = new MyClock(this);
+
+		this.setUpdatePeriod(100);
 	};
 
 	initCameras() 
@@ -177,15 +179,24 @@ class LightingScene extends CGFscene
 
 	};
 
-	updateLights() 
-	{
+	update(currTime){
+		this.lastTime = this.lastTime || 0;
+
+		this.deltaTime = currTime - this.lastTime;
+		this.lastTime = currTime;
+
+		this.clock.update(this.deltaTime);
+		//this.plane.update(this.deltaTime);
+	}
+
+
+	updateLights(){
 		for (var i = 0; i < this.lights.length; i++)
 			this.lights[i].update();
 	}
 
 
-	display() 
-	{
+	display(){
 		// ---- BEGIN Background, camera and axis setup
 
 		// Clear image and depth buffer everytime we update the scene
